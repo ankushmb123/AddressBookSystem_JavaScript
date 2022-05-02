@@ -171,18 +171,9 @@ try
         )
       );
 
-     //printing array before updating
-  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
-
-  //finding contact using name
-  let check = ContactsArray.findIndex(
-    (contact_book) => contact_book.firstName == "Rita"
-  );
+       //  UC5 Removing an element from an array at an  index
 
 
-  //UC5 Removing an element from an array at an  index
-
-  
 ContactsArray.splice(check, 1);
 console.log("----------------------Contacts after Being Deleted from the array---------------------------------");
 ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
@@ -190,3 +181,22 @@ ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
 {
   console.log(e);
 }
+
+
+
+      //  UC6 Reduce function to find total of contacts in Address Book
+
+
+      var ContactsPresenceTotal = 0;
+      function findTotalContacts(ContactsArray) 
+     try{
+       {
+        if (ContactsArray != null) ContactsPresenceTotal++;
+        return ContactsPresenceTotal;
+      ContactsArray.reduce(findTotalContacts, 1);
+       }
+      console.log("--Total Contacts Present in the AddressBookMaster array--: " +ContactsPresenceTotal);
+      } catch (e) 
+      {
+        console.log(e);
+      }
